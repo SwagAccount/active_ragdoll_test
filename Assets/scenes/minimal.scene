@@ -216,6 +216,20 @@
           "Force": 2000,
           "Size": 5,
           "Speed": 2000
+        },
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "e1e6dde3-fb69-40ab-8a55-55ca4a00b497",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
+          "ZIndex": 100
+        },
+        {
+          "__type": "Sandbox.SimpleCrosshair",
+          "__guid": "144367aa-cc3f-44a3-b842-a3f35fb9a5e6",
+          "MyStringValue": "Hello World!"
         }
       ]
     },

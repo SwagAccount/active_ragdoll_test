@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using Sandbox;
+using Sandbox.Physics;
 
 public sealed class BallShooter : Component
 {
@@ -13,6 +14,50 @@ public sealed class BallShooter : Component
 			SpawnBall();
 		if(Input.Pressed("attack2"))
 			ApplyForce();
+
+		if(Input.Pressed("Use"))
+			SelectBone();
+
+		if(Input.Released("Use"))
+			ReleaseBone();
+	}
+
+	[Property] Rigidbody connectedBody;
+
+	Sandbox.Physics.FixedJoint joint;
+
+	void SelectBone()
+	{
+		var trace = Scene.Trace.Ray(WorldPosition,WorldPosition+Transform.World.Forward*1024f).Run();
+		
+		if(!trace.Hit)
+			return;
+
+		
+		if(!trace.Body.IsValid())
+			return;
+
+		if(connectedBody.IsValid())
+			connectedBody.GameObject.Destroy();
+		
+		connectedBody = new GameObject().Components.Create<Rigidbody>();
+		connectedBody.WorldPosition = trace.EndPosition;
+		connectedBody.MotionEnabled = false;
+		connectedBody.GameObject.SetParent(GameObject);
+
+		var p1 = new PhysicsPoint(connectedBody.PhysicsBody, connectedBody.Transform.Position);
+		var p2 = new PhysicsPoint(trace.Body,trace.Body.Position);
+
+		joint = PhysicsJoint.CreateFixed(p1,p2);
+		joint.SpringLinear = new PhysicsSpring(100, 5);
+		joint.SpringAngular = new PhysicsSpring(100, 5);
+	}
+	void ReleaseBone()
+	{
+		joint.Remove();
+		joint = null;
+		if(connectedBody.IsValid())
+			connectedBody.GameObject.Destroy();
 	}
 
 	void SpawnBall()
