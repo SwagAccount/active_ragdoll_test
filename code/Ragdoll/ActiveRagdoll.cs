@@ -9,6 +9,9 @@ public sealed class ActiveRagdoll : Component
 	[Property] public float backUpTime {get;set;}
 	[Property] public float frontUpTime {get;set;}
 	[Property] public float GetUpEase {get;set;} = 0.5f;
+	[Property] public float FootRadius {get;set;} = 0.5f;
+	[Property] public List<GameObject> Feet {get;set;}
+	public List<BodyBone> FeetBodyBones {get;set;}
 
 	CharacterController characterController;
 
@@ -34,6 +37,7 @@ public sealed class ActiveRagdoll : Component
 		}
 	}
 	[Property] public float TipDistance {get;set;} = 10f;
+	[Property] public float FeetTipDistance {get;set;} = 10f;
 	[Property] public float RagdollTime {get;set;} = 5f;
 
 	[Button]
@@ -64,6 +68,7 @@ public sealed class ActiveRagdoll : Component
 
 		foreach(var body in bodies)
 		{
+
 			GameObject bone = JimmyBones.GetBoneObject(body.GroupName);
 
 			if(bone == null) return;
@@ -74,10 +79,22 @@ public sealed class ActiveRagdoll : Component
 				new BodyBone { Body = body, Bone = bone, Strength = 100}
 			);
 		}
+
+		FeetBodyBones = new List<BodyBone>();
+
+		foreach(var foot in Feet)
+		{
+			foreach(var bodyBone in BodyBones)
+			{
+				if(bodyBone.Body.GroupName.ToLower() != foot.Name.ToLower()) continue;
+				FeetBodyBones.Add(bodyBone);
+				break;
+			}
+		}
 	}
 	protected override void OnUpdate()
 	{
-		RagdolledCheck();
+		RagdollChecks();
 
 		MatchBones();
 
@@ -95,14 +112,18 @@ public sealed class ActiveRagdoll : Component
 	float ragdollTime;
 
 	float timeSinceGetUp => Time.Now - GetUpTime;
-	void RagdolledCheck()
+
+	[Property] bool down => frontGetUp ? timeSinceGetUp < frontUpTime : timeSinceGetUp < backUpTime;
+	void RagdollChecks()
 	{
 
 		JimmyBones.Set("grounded_back", !frontGetUp && timeSinceGetUp < backUpTime);
 		JimmyBones.Set("grounded_front", frontGetUp && timeSinceGetUp < frontUpTime);
+
 		if(Ragdolled || timeSinceGetUp < 0.4f)
 		{
-
+			characterController.Move();
+			
 			var rotationDifference = Rotation.Difference(BodyBones[0].Bone.LocalRotation, BodyBones[0].Body.Rotation);
             WorldRotation = rotationDifference;
 
@@ -113,8 +134,8 @@ public sealed class ActiveRagdoll : Component
 			WorldRotation = rotationToTarget * WorldRotation;
 
 			WorldPosition += BodyBones[0].Body.Position - BodyBones[0].Bone.WorldPosition;
-
-			if(Ragdolled)
+			
+			if(Ragdolled && characterController.IsOnGround)
 			{
 				ragdollTime += Time.Delta;
 				if(ragdollTime >= RagdollTime)
@@ -125,8 +146,33 @@ public sealed class ActiveRagdoll : Component
 			return;
 		}
 
-		if(Vector3.DistanceBetween(BodyBones[0].Body.Position, BodyBones[0].Bone.WorldPosition) > TipDistance)
-		Ragdolled = true;
+		bool feetFall = false;
+
+		for (int i = 0; i < Feet.Count && !down; i++)
+		{
+			feetFall = true;
+			if(Vector3.DistanceBetween(FeetBodyBones[i].Bone.WorldPosition,FeetBodyBones[i].Body.Position) > FeetTipDistance)
+				break;
+
+			var foot = Feet[i];
+			var collisions = Scene.FindInPhysics(new Sphere(foot.Children[0].WorldPosition, FootRadius));
+
+			foreach (var collision in collisions)
+			{
+				if (collision.IsAncestor(GameObject)) continue;
+				feetFall = false;
+				break;
+			}
+			if (feetFall) break;
+		}
+
+
+
+		if(
+			Vector3.DistanceBetween(BodyBones[0].Body.Position, BodyBones[0].Bone.WorldPosition) > TipDistance || 
+			feetFall
+			)
+			Ragdolled = true;
 	}
 
 	bool frontGetUp;
@@ -137,6 +183,7 @@ public sealed class ActiveRagdoll : Component
 		{
 			BodyBones[i].Body.UseController = !Ragdolled;
 			if(Ragdolled) continue;
+			BodyBones[i].Body.ApplyForce(Vector3.Up*-9.8f*Time.Delta);
 			BodyBones[i].Body.Move(BodyBones[i].Bone.WorldTransform,(10/BodyBones[i].Strength) / MathX.Clamp(MathX.Lerp(0,1,timeSinceGetUp/GetUpEase),0.1f,1));
 		}
 	}

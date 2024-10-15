@@ -1,0 +1,66 @@
+{
+  "RootObject": {
+    "__guid": "2a4e3dc9-9fe4-42d3-83da-56e95868aacc",
+    "Flags": 0,
+    "Name": "Terryball",
+    "Position": "-69.33285,-119.6046,26.38829",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "454ad15a-4c53-44aa-a2ee-136558e77aea",
+        "AnimationGraph": "animgraphs/terryball.vanmgrph",
+        "BodyGroups": 341,
+        "CreateBoneObjects": false,
+        "Model": "models/citizen/citizen.vmdl",
+        "Morphs": {},
+        "Parameters": {
+          "bools": {},
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "Sandbox.CapsuleCollider",
+        "__guid": "a592b5a6-df38-4e35-b098-f2e87ee984f1",
+        "End": "8.699999,0,0",
+        "IsTrigger": false,
+        "Radius": 6.5,
+        "Start": "-7.299997,0,0",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "c5d3d839-040f-40b0-a7ca-3a70ec2e6f7c",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
