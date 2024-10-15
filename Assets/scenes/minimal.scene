@@ -99,155 +99,72 @@
       "__PrefabVariables": {}
     },
     {
-      "__guid": "ee37547c-1f4a-492c-9bb7-be288bc9db8f",
-      "Flags": 0,
-      "Name": "Jimmy (10)",
-      "Position": "-72.55386,-151.4891,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "fc152718-c3df-4752-b1ea-011662cf7416",
-      "Flags": 0,
-      "Name": "Jimmy (16)",
-      "Position": "-55.39594,-151.4891,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "13ae69ef-7fc2-4941-b68e-6ba036aa2aec",
+      "__guid": "bff7e032-34be-4017-9a7e-b0de1c33c126",
       "Flags": 0,
       "Name": "Jimmy (1)",
-      "Position": "-88.43182,113.881,0.00008428468",
+      "Position": "83.44937,54.38671,0.00009835884",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "f64f7ec5-3844-479e-bbf6-fbc94b3fbc7c",
-      "Flags": 0,
-      "Name": "Jimmy (9)",
-      "Position": "-72.55386,113.881,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "a39ef40e-9ef5-4024-8707-fdbef888f55e",
-      "Flags": 0,
-      "Name": "Jimmy (15)",
-      "Position": "-55.39594,113.881,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "d8506b74-8c65-4b88-85ae-9e5f407cdab8",
+      "__guid": "3bbdc7aa-2362-4902-8fc1-d1b326c46d26",
       "Flags": 0,
       "Name": "Jimmy (2)",
-      "Position": "-88.43182,6.234924,0.00008428468",
+      "Position": "-37.95275,145.1803,0.00009112271",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "d6906e45-6be7-4cd0-8cd8-9ddf9c3b1edb",
-      "Flags": 0,
-      "Name": "Jimmy (8)",
-      "Position": "-72.55386,6.234924,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "07b4b48f-ad17-4afd-9fbd-693601531b3e",
-      "Flags": 0,
-      "Name": "Jimmy (14)",
-      "Position": "-55.39594,6.234924,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "5b56280d-674b-4260-811f-7c1583310d54",
+      "__guid": "e9b8a8b5-612e-48c2-8636-9da886683b09",
       "Flags": 0,
       "Name": "Jimmy (3)",
-      "Position": "-88.43182,-78.3312,0.00008428468",
+      "Position": "-124.5318,53.05659,0.00008907561",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "4a6f041f-4636-4d02-af34-db193a3a5a56",
-      "Flags": 0,
-      "Name": "Jimmy (7)",
-      "Position": "-72.55386,-78.3312,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "aff8d84d-0bb4-4fec-bb40-e76371886e9c",
-      "Flags": 0,
-      "Name": "Jimmy (13)",
-      "Position": "-55.39594,-78.3312,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "2c625d59-2620-4779-94e7-37e35c10f21d",
+      "__guid": "f69c7956-cad4-4e92-8943-72b46e309acf",
       "Flags": 0,
       "Name": "Jimmy (4)",
-      "Position": "-88.43182,60.92101,0.00008428468",
+      "Position": "-56.05888,-102.1634,0.0001063855",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "d6081806-b76c-4649-9754-1be8d72bb793",
-      "Flags": 0,
-      "Name": "Jimmy (6)",
-      "Position": "-72.55386,60.92101,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "1acffc53-6731-408a-91fa-89894bb2cd1a",
-      "Flags": 0,
-      "Name": "Jimmy (12)",
-      "Position": "-55.39594,60.92101,0.00008428468",
-      "Tags": "doll",
-      "__Prefab": "jimmy.prefab",
-      "__PrefabVariables": {}
-    },
-    {
-      "__guid": "90917ce7-18b9-4034-90a6-5b0ced7c3e99",
+      "__guid": "9605b7d1-d310-48a2-9394-720e33fe21ab",
       "Flags": 0,
       "Name": "Jimmy (5)",
-      "Position": "-88.43182,-36.11258,0.00008428468",
+      "Position": "28.88397,-103.812,0.00009969732",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "2874e5ca-237b-43e6-84b4-7eb328b925a0",
+      "__guid": "12e6a11e-b89d-42ba-8ee6-259c7709b0f0",
       "Flags": 0,
-      "Name": "Jimmy (11)",
-      "Position": "-72.55386,-36.11258,0.00008428468",
+      "Name": "Jimmy (6)",
+      "Position": "132.4522,-48.38067,0.0001172343",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
     {
-      "__guid": "0c051e41-147f-4f12-a795-c753b5ea16a2",
+      "__guid": "26a24918-d537-4c9c-b4cd-c272c77ce964",
       "Flags": 0,
-      "Name": "Jimmy (17)",
-      "Position": "-55.39594,-36.11258,0.00008428468",
+      "Name": "Jimmy (7)",
+      "Position": "82.92256,-132.7101,0.0001145559",
       "Tags": "doll",
+      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -309,29 +226,6 @@
       "Position": "-69.33285,-119.6046,26.38829",
       "__Prefab": "terryball.prefab",
       "__PrefabVariables": {}
-    },
-    {
-      "__guid": "c6afe0ad-62a3-4cd0-984a-62ffe382dd96",
-      "Flags": 0,
-      "Name": "Sphere",
-      "Position": "-119.6111,55.74115,44.56462",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "cfb45bf1-e5b5-4d1b-8393-d42440ee5d31",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/sphere.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
     }
   ],
   "SceneProperties": {

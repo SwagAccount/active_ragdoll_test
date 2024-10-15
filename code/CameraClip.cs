@@ -11,6 +11,9 @@ public sealed class CameraClip : Component
 	protected override void OnStart()
 	{
 		cameraComponent = Components.Get<CameraComponent>();
+
+        yaw = WorldRotation.Yaw();
+        pitch = WorldRotation.Pitch();
 	}
 
 	private float yaw = 0f;

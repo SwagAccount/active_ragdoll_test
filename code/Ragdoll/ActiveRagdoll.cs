@@ -34,6 +34,9 @@ public sealed class ActiveRagdoll : Component
 			}
 
 			_ragdolled = value;
+
+			JimmyBody.Tags.Remove(value ? "active" : "ragdoll");
+			JimmyBody.Tags.Add(value ? "ragdoll" : "active");
 		}
 	}
 	[Property] public float TipDistance {get;set;} = 10f;
