@@ -51,12 +51,30 @@ public sealed class ActiveRagdoll : Component
 		}
 	}
 
-	public struct BodyBone
+	public class BodyBone
 	{
-		public PhysicsBody Body {get;set;}
-		public GameObject Bone {get;set;}
-		[KeyProperty] public float Strength {get;set;}
-		[KeyProperty] string name => Bone.Name;
+		public PhysicsBody Body { get; set; }
+		public GameObject Bone { get; set; }
+		public List<BodyBone> Children { get; set; } = new List<BodyBone>();
+
+		private float _strength;
+		[KeyProperty]
+		public float Strength
+		{
+			get => _strength;
+			set
+			{
+				value = MathX.Clamp(value,0f,100f);
+				foreach (var child in Children)
+				{
+					child.Strength -= _strength - value;
+				}
+				_strength = value;
+			}
+		}
+
+		[KeyProperty]
+		public string Name => Bone.Name;
 	}
 	protected override void OnStart()
 	{
@@ -75,9 +93,19 @@ public sealed class ActiveRagdoll : Component
 
 			body.UseController = true;
 
-			BodyBones.Add(
-				new BodyBone { Body = body, Bone = bone, Strength = 100}
-			);
+			BodyBone bodyBone = new BodyBone { Body = body, Bone = bone, Strength = 100};
+
+			foreach(var bB in BodyBones)
+			{
+				if(bB.Bone != bone.Parent && bB.Bone != bone.Parent.Parent)
+				{
+					continue;
+				}
+				bB.Children.Add(bodyBone);
+				break;
+			}
+
+			BodyBones.Add( bodyBone );
 		}
 
 		FeetBodyBones = new List<BodyBone>();
@@ -181,10 +209,10 @@ public sealed class ActiveRagdoll : Component
 	{
 		for(int i = 0; i < BodyBones.Count; i++)
 		{
-			BodyBones[i].Body.UseController = !Ragdolled;
+			BodyBones[i].Body.UseController = !Ragdolled && BodyBones[i].Strength >= 0.1f;
 			if(Ragdolled) continue;
-			BodyBones[i].Body.ApplyForce(Vector3.Up*-9.8f*Time.Delta);
-			BodyBones[i].Body.Move(BodyBones[i].Bone.WorldTransform,(10/BodyBones[i].Strength) / MathX.Clamp(MathX.Lerp(0,1,timeSinceGetUp/GetUpEase),0.1f,1));
+			if (BodyBones[i].Strength <= 0.1f) BodyBones[i].Body.ApplyForce(Vector3.Up*-9.8f*Time.Delta);
+			else BodyBones[i].Body.Move(BodyBones[i].Bone.WorldTransform,(10/BodyBones[i].Strength) / MathX.Clamp(MathX.Lerp(0,1,timeSinceGetUp/GetUpEase),0.1f,1));
 		}
 	}
 

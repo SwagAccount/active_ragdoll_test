@@ -92,7 +92,7 @@
       "__guid": "b9c9a4e1-48fd-4596-bd47-c801fc102822",
       "Flags": 0,
       "Name": "Jimmy",
-      "Position": "-88.43182,-151.4891,0.00008428468",
+      "Position": "30.37792,-9.694443,0.00009519554",
       "Tags": "doll",
       "Enabled": true,
       "__Prefab": "jimmy.prefab",
@@ -104,7 +104,6 @@
       "Name": "Jimmy (10)",
       "Position": "-72.55386,-151.4891,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -114,7 +113,6 @@
       "Name": "Jimmy (16)",
       "Position": "-55.39594,-151.4891,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -124,7 +122,6 @@
       "Name": "Jimmy (1)",
       "Position": "-88.43182,113.881,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -134,7 +131,6 @@
       "Name": "Jimmy (9)",
       "Position": "-72.55386,113.881,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -144,7 +140,6 @@
       "Name": "Jimmy (15)",
       "Position": "-55.39594,113.881,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -154,7 +149,6 @@
       "Name": "Jimmy (2)",
       "Position": "-88.43182,6.234924,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -164,7 +158,6 @@
       "Name": "Jimmy (8)",
       "Position": "-72.55386,6.234924,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -174,7 +167,6 @@
       "Name": "Jimmy (14)",
       "Position": "-55.39594,6.234924,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -184,7 +176,6 @@
       "Name": "Jimmy (3)",
       "Position": "-88.43182,-78.3312,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -194,7 +185,6 @@
       "Name": "Jimmy (7)",
       "Position": "-72.55386,-78.3312,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -204,7 +194,6 @@
       "Name": "Jimmy (13)",
       "Position": "-55.39594,-78.3312,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -214,7 +203,6 @@
       "Name": "Jimmy (4)",
       "Position": "-88.43182,60.92101,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -224,7 +212,6 @@
       "Name": "Jimmy (6)",
       "Position": "-72.55386,60.92101,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -234,7 +221,6 @@
       "Name": "Jimmy (12)",
       "Position": "-55.39594,60.92101,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -244,7 +230,6 @@
       "Name": "Jimmy (5)",
       "Position": "-88.43182,-36.11258,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -254,7 +239,6 @@
       "Name": "Jimmy (11)",
       "Position": "-72.55386,-36.11258,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -264,7 +248,6 @@
       "Name": "Jimmy (17)",
       "Position": "-55.39594,-36.11258,0.00008428468",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -304,10 +287,18 @@
         {
           "__type": "Sandbox.SphereCollider",
           "__guid": "16c13f55-680b-4682-a4d8-c28841a776e7",
+          "__enabled": false,
           "Center": "0,0,0",
           "IsTrigger": false,
           "Radius": 40,
           "Static": false
+        },
+        {
+          "__type": "BallShooter",
+          "__guid": "d7404842-ef7f-469d-b024-9f77f9b97028",
+          "Force": 2000,
+          "Size": 5,
+          "Speed": 2000
         }
       ]
     },
@@ -318,6 +309,29 @@
       "Position": "-69.33285,-119.6046,26.38829",
       "__Prefab": "terryball.prefab",
       "__PrefabVariables": {}
+    },
+    {
+      "__guid": "c6afe0ad-62a3-4cd0-984a-62ffe382dd96",
+      "Flags": 0,
+      "Name": "Sphere",
+      "Position": "-119.6111,55.74115,44.56462",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "cfb45bf1-e5b5-4d1b-8393-d42440ee5d31",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
