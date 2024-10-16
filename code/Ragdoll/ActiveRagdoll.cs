@@ -144,7 +144,10 @@ public sealed class ActiveRagdoll : Component
 
 	float timeSinceGetUp => Time.Now - GetUpTime;
 
-	[Property] bool down => frontGetUp ? timeSinceGetUp < frontUpTime : timeSinceGetUp < backUpTime;
+	[Property] bool down( float delay = 0)
+	{
+		return frontGetUp ? timeSinceGetUp-delay < frontUpTime : timeSinceGetUp+delay < backUpTime;
+	}
 	void RagdollChecks()
 	{
 
@@ -179,15 +182,16 @@ public sealed class ActiveRagdoll : Component
 
 		bool feetFall = false;
 
-		for (int i = 0; i < Feet.Count && !down; i++)
+		for (int i = 0; i < Feet.Count && !down(0.1f); i++)
 		{
 			feetFall = true;
 			if(Vector3.DistanceBetween(FeetBodyBones[i].Bone.WorldPosition,FeetBodyBones[i].Body.Position) > FeetTipDistance)
+			{
 				break;
-
+			}
 			var foot = Feet[i];
 			var collisions = Scene.FindInPhysics(new Sphere(foot.Children[0].WorldPosition, FootRadius));
-
+			Gizmo.Draw.LineSphere(new Sphere(foot.Children[0].WorldPosition, FootRadius));
 			foreach (var collision in collisions)
 			{
 				if (collision.IsAncestor(GameObject)) continue;
@@ -196,11 +200,10 @@ public sealed class ActiveRagdoll : Component
 			}
 			if (feetFall) break;
 		}
-
-
+		Log.Info((Vector3.DistanceBetween(BodyBones[0].Body.Position, BodyBones[0].Bone.WorldPosition) > TipDistance && !down(1)));
 
 		if(
-			Vector3.DistanceBetween(BodyBones[0].Body.Position, BodyBones[0].Bone.WorldPosition) > TipDistance || 
+			(Vector3.DistanceBetween(BodyBones[0].Body.Position, BodyBones[0].Bone.WorldPosition) > TipDistance && !down(0.1f)) || 
 			feetFall
 			)
 			Ragdolled = true;

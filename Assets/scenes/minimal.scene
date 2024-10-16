@@ -104,7 +104,6 @@
       "Name": "Jimmy (1)",
       "Position": "83.44937,54.38671,0.00009835884",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -114,7 +113,6 @@
       "Name": "Jimmy (2)",
       "Position": "-37.95275,145.1803,0.00009112271",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -124,7 +122,6 @@
       "Name": "Jimmy (3)",
       "Position": "-124.5318,53.05659,0.00008907561",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -134,7 +131,6 @@
       "Name": "Jimmy (4)",
       "Position": "-56.05888,-102.1634,0.0001063855",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -144,7 +140,6 @@
       "Name": "Jimmy (5)",
       "Position": "28.88397,-103.812,0.00009969732",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -154,7 +149,6 @@
       "Name": "Jimmy (6)",
       "Position": "132.4522,-48.38067,0.0001172343",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },
@@ -164,7 +158,6 @@
       "Name": "Jimmy (7)",
       "Position": "82.92256,-132.7101,0.0001145559",
       "Tags": "doll",
-      "Enabled": true,
       "__Prefab": "jimmy.prefab",
       "__PrefabVariables": {}
     },

@@ -12,6 +12,7 @@ public sealed class BallShooter : Component
 	{
 		if(Input.Pressed("attack1"))
 			SpawnBall();
+		
 		if(Input.Pressed("attack2"))
 			ApplyForce();
 
